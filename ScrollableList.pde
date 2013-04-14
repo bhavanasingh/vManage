@@ -38,9 +38,13 @@ public class ScrollableList extends ControlGroup<ScrollableList> {
     _myScrollbar.setVisible(true);
    // _myScrollbar.hide();
     _myScrollbar.updateDisplayMode(DEFAULT);
-    _myScrollbar.setWidth(10);
+    _myScrollbar.setWidth(20);
     _myScrollbar.setHeight(groupDisplay*_myGroupHeight);
     add(_myScrollbar);
+  }
+
+  public void setGroupHeight(int value) {
+    _myGroupHeight = value;
   }
 
   public void setGroupDisplay(int value) {
@@ -49,7 +53,7 @@ public class ScrollableList extends ControlGroup<ScrollableList> {
   }
 
   public void addGroup(ControlGroup g) {
-    g.setPosition(0, 20 + groups.size()*_myGroupHeight);
+    g.setPosition(0, groups.size()*_myGroupHeight);
     g.setGroup(this);
     groups.add(g);
     updateScroll();
@@ -69,9 +73,6 @@ public class ScrollableList extends ControlGroup<ScrollableList> {
     if (groupDisplay < groups.size() && isScrollbarVisible) {
       _myScrollbar.show();
       groupOffset = (int) Math.abs(_myScrollValue * (groups.size() - groupDisplay));
-      
-      println(_myScrollValue);
-      println(groupOffset);
       
       for(int i = 0; i < groups.size(); i++) {
         if(i < groupOffset || i > (groupOffset + groupDisplay-1)) {

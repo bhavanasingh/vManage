@@ -49,7 +49,7 @@ void setupBackground(){
   cp5 = new ControlP5(this);
   cp5.setControlFont(createFont(font,15 * scaleFactor));
   item_width = percentX(50);
-  item_height = percentY(10);
+  item_height = percentY(17);
 //  setupItemComposite();//Start with the initial page. After this, pagees will be set in controlEvent function
 
 //Initializing about and Help Screen
@@ -83,8 +83,9 @@ aboutText.hide();
 void setupItemComposite(){
   System.out.println("Inside setupItemComposite");
   
-  inventory = new ScrollableList(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "inventory", sidebar_buttonX + sidebar_buttonWidth + 10, 25, item_width + 10, 20);
-  inventory.setGroupDisplay(6);
+  inventory = new ScrollableList(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "inventory", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(5), item_width + 20, 20);
+  inventory.setGroupHeight(item_height);
+    inventory.setGroupDisplay(5);
   
    for(int i = 0; i < 12; i++) {
        ItemComposite item = new ItemComposite(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "Item" + i, 0, 0, item_width, item_height);
@@ -127,7 +128,6 @@ public void controlEvent(ControlEvent theEvent) {
   switch(theEvent.getId()) {
     case(1)://Home page with list of items
     currentPage = Page.HOME_PAGE;  
-    setupItemComposite();
     break;
     case(2)://Notifications list
     currentPage = Page.NOTIFICATIONS_PAGE;

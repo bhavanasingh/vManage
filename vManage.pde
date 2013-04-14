@@ -15,6 +15,7 @@ void setup()
   size(sizeX * scaleFactor, sizeY * scaleFactor);
   setupBackground();
   setupItemScreen();
+  setupItemComposite();
   drawMainMenu();  //Draw main menu
   currentPage = Page.HOME_PAGE; //default
 }

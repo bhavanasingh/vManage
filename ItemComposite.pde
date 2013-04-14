@@ -9,8 +9,8 @@ public class ItemComposite extends ControlGroup {
   protected Textlabel item_qty_label;
   protected Textlabel item_description_label;
   
-  protected int buttonWidth = 60;
-  protected int buttonHeight = 20;
+  protected int buttonWidth = percentX(5);
+  protected int buttonHeight = percentY(3);
   protected int spacing = 5;
   protected int backgroundHeight = buttonHeight*4 + spacing*5;
   
@@ -22,7 +22,7 @@ public class ItemComposite extends ControlGroup {
   protected ItemComposite(ControlP5 theControlP5, ControllerGroup<?> theParent, String theName, int theX, int theY, int theWidth, int theHeight) {
     super(theControlP5, theParent, theName, theX, theY, theWidth, theHeight);
     
-    this.setHeight(15);
+    this.setHeight(percentY(2));
     this.disableCollapse();
     this.setBackgroundHeight(backgroundHeight);
     
@@ -61,19 +61,19 @@ public class ItemComposite extends ControlGroup {
       ;
     
      item_brand_label = cp5.addTextlabel(theName + "-item_brand_label")
- //     .setPosition(spacing,spacing*2 + item_name_label.getLineHeight())
+      .setPosition(spacing,spacing*2 + item_name_label.getLineHeight())
       .setColorValue(0xff000000)
       .setGroup(this)
       ;
       
       item_qty_label  = cp5.addTextlabel(theName + "-item_qty_label")
-//      .setPosition(spacing,spacing*3 + item_name_label.getLineHeight()*2)
+      .setPosition(spacing,spacing*3 + item_name_label.getLineHeight()*2)
       .setColorValue(0xff000000)
       .setGroup(this)
       ;
   
   item_description_label = cp5.addTextlabel(theName + "-item_description_label")
- //     .setPosition(spacing,spacing*4 + item_name_label.getLineHeight()*3)
+      .setPosition(spacing,spacing*4 + item_name_label.getLineHeight()*3)
       .setColorValue(0xff000000)
       .setGroup(this)
       ;    
