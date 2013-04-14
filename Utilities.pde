@@ -34,6 +34,8 @@ ItemScreen addItem_screen;
 ItemScreen editItem_screen;
 ItemScreen removeItem_screen;
 
+ScrollableList inventory;
+
 //Item size declaration
 int item_width;
 int item_height;
@@ -80,8 +82,12 @@ aboutText.hide();
 //setupItemComposite function performs all the setup activities for creating composites representing screens
 void setupItemComposite(){
   System.out.println("Inside setupItemComposite");
-   for(int i = 0; i < 10; i++) {
-       ItemComposite item = new ItemComposite(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "Item" + i, percentX(15), percentY(6) + i*item_height + i*20, item_width, item_height);
+  
+  inventory = new ScrollableList(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "inventory", sidebar_buttonX + sidebar_buttonWidth + 10, 25, item_width + 10, 20);
+  inventory.setGroupDisplay(6);
+  
+   for(int i = 0; i < 12; i++) {
+       ItemComposite item = new ItemComposite(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "Item" + i, 0, 0, item_width, item_height);
       cp5.register(cp5, "item" + i, item);
       item.setBackgroundColor(color(168, 168, 192));
       item.setLabel("Item" + i);
@@ -92,7 +98,7 @@ void setupItemComposite(){
       item.setItemDescription("Sample description of an Item");
       
       items.add(item);
-//      inventory.addGroup(item);
+      inventory.addGroup(item);
      }
 }
 
