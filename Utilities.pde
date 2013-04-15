@@ -12,14 +12,14 @@ Textarea aboutText;
 
 //Help Strings
 String[] eHelp, fHelp;
-
+MySQL msql;
 String mysqlUser = "root";
 String mysqlPwd = "bs140209";
 String mysqlServer = "";
-String mysqlDatabase = "monstermash"; 
-int sizeX = 1500; 
-int sizeY = 1000; 
-int scaleFactor = 1; //5 for wall 
+String mysqlDatabase = "inventory";
+int sizeX = 1500;
+int sizeY = 1000;
+int scaleFactor = 1; //5 for wall
 
 int currentPage = 1; //1 home screen by default
 String currentLanguage = "fr";
@@ -62,6 +62,8 @@ void setupBackground(){
   notif_width = percentX(50);
   notif_height = percentY(10);
 //  setupItemComposite();//Start with the initial page. After this, pagees will be set in controlEvent function
+
+  msql = new MySQL( this, "localhost", mysqlDatabase, mysqlUser, mysqlPwd);
 
 //Initializing about and Help Screen
 helpText = cp5.addTextarea("helpText")
