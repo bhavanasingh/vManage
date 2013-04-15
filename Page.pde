@@ -68,12 +68,14 @@ void drawMainMenu() {
   PFont pfont = createFont(font, 15 * scaleFactor, true); // use true/false for smooth/no-smooth
   ControlFont font = new ControlFont(pfont, 15 * scaleFactor);  
 
+// .setColorBackground(#26ADE4).setColorLabel(#000000).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#D1E751)
+
      home_button = cp5.addButton("home_button")
      .setPosition(sidebar_buttonX, sidebar_buttonY)
      .setSize(sidebar_buttonWidth, sidebar_buttonHeight)
      .setLabel("Home")
      .setId(1)
-     .setColorBackground(color(24, 24, 96)).setColorLabel(color(240, 240, 240)).setColorValue(#000000).setColorForeground(#D1C4D9).setColorActive(#E0E7F0)
+     .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      ;
      
      notifications_button = cp5.addButton("notifications_button")
@@ -81,7 +83,7 @@ void drawMainMenu() {
      .setSize(sidebar_buttonWidth, sidebar_buttonHeight)
      .setLabel("Notifications")
      .setId(2)
-     .setColorBackground(color(24, 24, 96)).setColorLabel(color(240, 240, 240)).setColorValue(#000000).setColorForeground(#D1C4D9).setColorActive(#E0E7F0)
+     .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      ;
      
      addItem_button  = cp5.addButton("addItem_button")
@@ -89,7 +91,7 @@ void drawMainMenu() {
      .setSize(sidebar_buttonWidth, sidebar_buttonHeight)
      .setLabel("Add Item")
      .setId(3)
-     .setColorBackground(color(24, 24, 96)).setColorLabel(color(240, 240, 240)).setColorValue(#000000).setColorForeground(#D1C4D9).setColorActive(#E0E7F0)
+     .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      ;
     
      report_button  = cp5.addButton("report_button")
@@ -97,7 +99,7 @@ void drawMainMenu() {
      .setSize(sidebar_buttonWidth, sidebar_buttonHeight)
      .setLabel("Report")
      .setId(4)
-     .setColorBackground(color(24, 24, 96)).setColorLabel(color(240, 240, 240)).setColorValue(#000000).setColorForeground(#D1C4D9).setColorActive(#E0E7F0)
+     .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      ;
      
      help_button  = cp5.addButton("help_button")
@@ -105,7 +107,7 @@ void drawMainMenu() {
      .setSize(sidebar_buttonWidth, sidebar_buttonHeight)
      .setLabel("Help")
      .setId(5)
-     .setColorBackground(color(24, 24, 96)).setColorLabel(color(240, 240, 240)).setColorValue(#000000).setColorForeground(#D1C4D9).setColorActive(#E0E7F0)
+     .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      ;
      
      about_button  = cp5.addButton("about_button")
@@ -113,7 +115,7 @@ void drawMainMenu() {
      .setSize(sidebar_buttonWidth, sidebar_buttonHeight)
      .setLabel("About")
      .setId(6)
-     .setColorBackground(color(24, 24, 96)).setColorLabel(color(240, 240, 240)).setColorValue(#000000).setColorForeground(#D1C4D9).setColorActive(#E0E7F0)
+     .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      ;
      
      exit_button  = cp5.addButton("exit_button")
@@ -121,7 +123,7 @@ void drawMainMenu() {
      .setSize(sidebar_buttonWidth, sidebar_buttonHeight)
      .setLabel("Exit")
      .setId(7)
-     .setColorBackground(color(24, 24, 96)).setColorLabel(color(240, 240, 240)).setColorValue(#000000).setColorForeground(#D1C4D9).setColorActive(#E0E7F0)
+     .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      ;
 
 //Below buttons are commented because these buttons will be moved to a different page. They are not a part of main menu

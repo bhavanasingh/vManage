@@ -14,21 +14,26 @@ public class NotificationComposite extends ControlGroup {
     this.disableCollapse();
     this.setBackgroundHeight(theHeight);
     
+      this.setBackgroundColor(#E9E9E9);
+    this.setColorBackground(#BCBCBC);
+    this.setColorForeground(#BCBCBC);
+    this.setColorActive(#BCBCBC);
+    
    text = cp5.addTextarea(theName + "-text")
                 .setPosition(30,5)
-                .setSize(percentX(45),theHeight - 5)
+                .setSize(percentX(45),theHeight - 10)
                 .setLineHeight(14)
                 .setColor(#000000)
-                .setColorBackground(#A8A8C0)
-                .setColorForeground(#A8A8C0)
+                .setColorBackground(#E9E9E9)
+                .setColorForeground(#E9E9E9)
                 .setGroup(this)
                 ;
     
     checkbox = cp5.addCheckBox(theName + "-checkBox")
                 .setPosition(5, theHeight/2 - percentX(1))
-                .setColorForeground(120)
-                .setColorActive(255)
-                .setColorLabel(255)
+                .setColorBackground(#ffffff)
+                .setColorForeground(#000000)
+                .setColorActive(#000000)
                 .setSize(percentX(1), percentX(1))
                 .addItem(theName + "-checkBox0", 0)
                 .hideLabels()

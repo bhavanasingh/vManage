@@ -26,7 +26,7 @@ void draw()
   size(sizeX * scaleFactor, sizeY * scaleFactor);
     
   //setupBackground(); //clear back ground and draw header
-  background(240, 240, 240);
+  background(255);
    
   switch(currentPage) {
      

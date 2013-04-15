@@ -24,11 +24,16 @@ public class ItemComposite extends ControlGroup {
     this.setHeight(percentY(2));
     this.disableCollapse();
     this.setBackgroundHeight(theHeight);
+    this.setBackgroundColor(#E9E9E9);
+    this.setColorBackground(#BCBCBC);
+    this.setColorForeground(#BCBCBC);
+    this.setColorActive(#BCBCBC);
     
    sell_button = cp5.addButton(theName + "-sell_button")
      .setPosition(getWidth() - buttonWidth - spacing, spacing)
      .setSize(buttonWidth,buttonHeight)
      .setLabel("Sell")
+     .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      .setGroup(this)
      ;
   
@@ -36,6 +41,7 @@ public class ItemComposite extends ControlGroup {
      .setPosition(getWidth() - buttonWidth - spacing,buttonHeight + spacing*2)
      .setSize(buttonWidth,buttonHeight)
      .setLabel("Receive")
+     .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      .setGroup(this)
      ;
      
@@ -43,6 +49,7 @@ public class ItemComposite extends ControlGroup {
      .setPosition(getWidth() - buttonWidth - spacing,buttonHeight*2 + spacing*3)
      .setSize(buttonWidth,buttonHeight)
      .setLabel("Edit")
+     .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      .setGroup(this)
      ;
      
@@ -50,6 +57,7 @@ public class ItemComposite extends ControlGroup {
      .setPosition(getWidth() - buttonWidth - spacing,buttonHeight*3 + spacing*4)
      .setSize(buttonWidth,buttonHeight)
      .setLabel("Remove")
+     .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      .setGroup(this)
      ;
     

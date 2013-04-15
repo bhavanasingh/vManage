@@ -19,6 +19,7 @@ public class ScrollableList extends ControlGroup<ScrollableList> {
     super(theControlP5, theGroup, theName, theX, theY, theW, theH);
 
     this.disableCollapse();
+    this.captionLabel().toUpperCase(false);
     
     groups = new ArrayList<ControlGroup>();
 
@@ -40,9 +41,9 @@ public class ScrollableList extends ControlGroup<ScrollableList> {
     _myScrollbar.updateDisplayMode(DEFAULT);
     _myScrollbar.setWidth(20);
     _myScrollbar.setHeight(groupDisplay*_myGroupHeight);
-  _myScrollbar.setColorBackground(#E0E7F0);
-  _myScrollbar.setColorForeground(#181860);
-  _myScrollbar.setColorActive(#D1C4D9);
+  _myScrollbar.setColorBackground(#4DBCE9);
+  _myScrollbar.setColorForeground(#424242);
+  _myScrollbar.setColorActive(#424242);
   _myScrollbar.setHandleSize(50);
     add(_myScrollbar);
   }

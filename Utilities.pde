@@ -96,7 +96,6 @@ void setupItemComposite(){
    for(int i = 0; i < 12; i++) {
        ItemComposite item = new ItemComposite(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "Item" + i, 0, 0, item_width, item_height);
       cp5.register(cp5, "item" + i, item);
-      item.setBackgroundColor(color(168, 168, 192));
       item.setLabel("Item" + i);
    //   item.setGroup(group);
       item.setItemName("Example Name");
@@ -113,9 +112,8 @@ void setupItemComposite(){
     notifications_list.setGroupDisplay(8);
     
     for(int i = 0; i < 10; i++) {
-       NotificationComposite msg = new NotificationComposite(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "Msg" + i, 0, 0, notif_width, notif_height);
+      NotificationComposite msg = new NotificationComposite(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "Msg" + i, 0, 0, notif_width, notif_height);
       cp5.register(cp5, "msg" + i, msg);
-      msg.setBackgroundColor(color(168, 168, 192));
       msg.setLabel("Msg" + i);
       msg.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lectus risus, placerat eget lobortis nec, lacinia ac neque. Integer laoreet gravida lectus quis convallis. Aliquam ac placerat leo. Nam a arcu augue, sit amet feugiat augue. Phasellus vulputate quam eu tortor lobortis venenatis.");
       notifications.add(msg);
