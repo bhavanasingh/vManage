@@ -9,6 +9,8 @@ Button home_button;
 Button sell_button;
 Button buy_button;
 Button ack_button;
+Button rules_button;
+Button add_rule_button;
 ListBox listboxProf;
 
 int buttonWidth;
@@ -119,13 +121,28 @@ void drawMainMenu() {
      ;
      
      exit_button  = cp5.addButton("exit_button")
-     .setPosition(sidebar_buttonX, sidebar_buttonY + sidebar_buttonHeight * 6 + sidebar_space * 6)
+     .setPosition(sidebar_buttonX, sidebar_buttonY + sidebar_buttonHeight * 8 + sidebar_space * 8)
      .setSize(sidebar_buttonWidth, sidebar_buttonHeight)
      .setLabel("Exit")
      .setId(7)
      .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      ;
 
+      rules_button = cp5.addButton("rules_button")
+     .setPosition(sidebar_buttonX, sidebar_buttonY + sidebar_buttonHeight * 6 + sidebar_space * 6)
+     .setSize(sidebar_buttonWidth, sidebar_buttonHeight)
+     .setLabel("Rules")
+     .setId(8)
+     .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
+     ;
+     
+     add_rule_button = cp5.addButton("add_rule_button")
+     .setPosition(sidebar_buttonX, sidebar_buttonY + sidebar_buttonHeight * 7 + sidebar_space * 7)
+     .setSize(sidebar_buttonWidth, sidebar_buttonHeight)
+     .setLabel("Add Rule")
+     .setId(9)
+     .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
+     ;
 //Below buttons are commented because these buttons will be moved to a different page. They are not a part of main menu
     /*sell_button  = cp5.addButton("sell_button")
      .setPosition(sidebar_buttonX, sidebar_buttonY + sidebar_buttonHeight * 9 + sidebar_space * 9)
@@ -153,72 +170,110 @@ void drawMainMenu() {
      
 }
 
-void drawHomePage(){
+//Below functions define what components will be drawn based on the page selection in the control events. They are called from vManage.pde
+void drawRulesPage(){
   notifications_list.hide();
-  inventory.show();
-  addItem_screen.hide(); 
+  inventory.hide();
+  addItem_screen.hide();
   editItem_screen.hide();
   removeItem_screen.hide();
   helpText.hide();
   aboutText.hide();
-  
+  //addRule_screen.hide();
+  rule_list.show();
+}
+
+void drawAddRulePage(){
+  notifications_list.hide();
+  inventory.hide();
+  addItem_screen.hide();
+  editItem_screen.hide();
+  removeItem_screen.hide();
+  helpText.hide();
+  aboutText.hide();
+  //addRule_screen.show();
+  rule_list.hide();
+}
+
+void drawHomePage(){
+  notifications_list.hide();
+  inventory.show();
+  addItem_screen.hide();
+  editItem_screen.hide();
+  removeItem_screen.hide();
+  helpText.hide();
+  aboutText.hide();
+  //addRule_screen.hide();
+  rule_list.hide();
 }
 void drawAddItemPage(){
   notifications_list.hide();
   inventory.hide();
-  addItem_screen.show(); 
+  addItem_screen.show();
   editItem_screen.hide();
   removeItem_screen.hide();
   helpText.hide();
   aboutText.hide();
-} 
+  //addRule_screen.hide();
+  rule_list.hide();
+}
 void drawEditItemPage(){
   notifications_list.hide();
   inventory.hide();
-  addItem_screen.hide(); 
-    editItem_screen.show();
-    removeItem_screen.hide();
-    helpText.hide();
-    aboutText.hide();
+  addItem_screen.hide();
+  editItem_screen.show();
+  removeItem_screen.hide();
+  helpText.hide();
+  aboutText.hide();
+  //addRule_screen.hide();
+  rule_list.hide();
 }
 void drawRemoveItemPage(){
   notifications_list.hide();
   inventory.hide();
-  addItem_screen.hide(); 
-    editItem_screen.hide();
-    removeItem_screen.show();
-    helpText.hide();
-    aboutText.hide();
+  addItem_screen.hide();
+  editItem_screen.hide();
+  removeItem_screen.show();
+  helpText.hide();
+  aboutText.hide();
+  //addRule_screen.hide();
+  rule_list.hide();
 }
 
 void drawNotificationsPage(){
   notifications_list.show();
   inventory.hide();
-  addItem_screen.hide(); 
-    editItem_screen.hide();
-    removeItem_screen.hide();
-    helpText.hide();
-    aboutText.hide();
+  addItem_screen.hide();
+  editItem_screen.hide();
+  removeItem_screen.hide();
+  helpText.hide();
+  aboutText.hide();
+  //addRule_screen.hide();
+  rule_list.hide();
 }
 
 void drawReportsPage(){
   notifications_list.hide();
   inventory.hide();
-  addItem_screen.hide(); 
+  addItem_screen.hide();
   editItem_screen.hide();
   removeItem_screen.hide();
   helpText.hide();
   aboutText.hide();
+  //addRule_screen.hide();
+  rule_list.hide();
 }
 
 void drawHelpPage(){
   notifications_list.hide();
   inventory.hide();
-  addItem_screen.hide(); 
+  addItem_screen.hide();
   editItem_screen.hide();
   removeItem_screen.hide();
   helpText.show();
   aboutText.hide();
+  //addRule_screen.hide();
+  rule_list.hide();
 }
 
 void drawAboutPage(){
@@ -226,4 +281,6 @@ void drawAboutPage(){
   inventory.hide();
   helpText.hide();
   aboutText.show();
+  //addRule_screen.hide();
+  rule_list.hide();
 }
