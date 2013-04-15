@@ -94,7 +94,7 @@ aboutText.hide();
 void setupItemComposite(){
   System.out.println("Inside setupItemComposite");
   
-  inventory = new ScrollableList(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "Inventory", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(2), item_width + 20, 20);
+  inventory = new ScrollableList(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "Inventory", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(2), item_width + 20, 0);
   inventory.setGroupHeight(item_height);
     inventory.setGroupDisplay(5);
   
@@ -132,7 +132,7 @@ void setupItemComposite(){
      }
      
 
-     notifications_list = new ScrollableList(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "Notifications", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(5), item_width + 20, 20);
+     notifications_list = new ScrollableList(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "Notifications", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(2), item_width + 20, 0);
   notifications_list.setGroupHeight(notif_height);
     notifications_list.setGroupDisplay(8);
     

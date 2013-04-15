@@ -31,8 +31,8 @@ public class NotificationComposite extends ControlGroup {
     
     checkbox = cp5.addCheckBox(theName + "-checkBox")
                 .setPosition(5, theHeight/2 - percentX(1))
-                .setColorBackground(#ffffff)
-                .setColorForeground(#000000)
+                .setColorBackground(#4DBCE9)
+                .setColorForeground(#424242)
                 .setColorActive(#000000)
                 .setSize(percentX(1), percentX(1))
                 .addItem(theName + "-checkBox0", 0)

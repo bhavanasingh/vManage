@@ -22,6 +22,7 @@ public class ItemScreen extends ControlGroup {
     this.setHeight(percentY(10));
     this.setBackgroundHeight(theHeight);
     this.disableCollapse();
+    this.hideBar();
     
     textfields = new ArrayList<Textfield>();
     buttons = new ArrayList<Button>();
