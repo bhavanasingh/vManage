@@ -179,7 +179,7 @@ void drawRulesPage(){
   removeItem_screen.hide();
   helpText.hide();
   aboutText.hide();
-  //addRule_screen.hide();
+  addRule_screen.hide();
   rule_list.show();
 }
 
@@ -191,7 +191,7 @@ void drawAddRulePage(){
   removeItem_screen.hide();
   helpText.hide();
   aboutText.hide();
-  //addRule_screen.show();
+  addRule_screen.show();
   rule_list.hide();
 }
 
@@ -203,7 +203,7 @@ void drawHomePage(){
   removeItem_screen.hide();
   helpText.hide();
   aboutText.hide();
-  //addRule_screen.hide();
+  addRule_screen.hide();
   rule_list.hide();
 }
 void drawAddItemPage(){
@@ -214,7 +214,7 @@ void drawAddItemPage(){
   removeItem_screen.hide();
   helpText.hide();
   aboutText.hide();
-  //addRule_screen.hide();
+  addRule_screen.hide();
   rule_list.hide();
 }
 void drawEditItemPage(){
@@ -225,7 +225,7 @@ void drawEditItemPage(){
   removeItem_screen.hide();
   helpText.hide();
   aboutText.hide();
-  //addRule_screen.hide();
+  addRule_screen.hide();
   rule_list.hide();
 }
 void drawRemoveItemPage(){
@@ -236,7 +236,7 @@ void drawRemoveItemPage(){
   removeItem_screen.show();
   helpText.hide();
   aboutText.hide();
-  //addRule_screen.hide();
+  addRule_screen.hide();
   rule_list.hide();
 }
 
@@ -248,7 +248,7 @@ void drawNotificationsPage(){
   removeItem_screen.hide();
   helpText.hide();
   aboutText.hide();
-  //addRule_screen.hide();
+  addRule_screen.hide();
   rule_list.hide();
 }
 
@@ -260,7 +260,7 @@ void drawReportsPage(){
   removeItem_screen.hide();
   helpText.hide();
   aboutText.hide();
-  //addRule_screen.hide();
+  addRule_screen.hide();
   rule_list.hide();
 }
 
@@ -272,7 +272,7 @@ void drawHelpPage(){
   removeItem_screen.hide();
   helpText.show();
   aboutText.hide();
-  //addRule_screen.hide();
+  addRule_screen.hide();
   rule_list.hide();
 }
 
@@ -281,6 +281,6 @@ void drawAboutPage(){
   inventory.hide();
   helpText.hide();
   aboutText.show();
-  //addRule_screen.hide();
+  addRule_screen.hide();
   rule_list.hide();
 }
