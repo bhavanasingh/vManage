@@ -152,6 +152,7 @@ void drawMainMenu() {
 }
 
 void drawHomePage(){
+  notifications_list.hide();
   inventory.show();
   addItem_screen.hide(); 
   editItem_screen.hide();
@@ -161,6 +162,7 @@ void drawHomePage(){
   
 }
 void drawAddItemPage(){
+  notifications_list.hide();
   inventory.hide();
   addItem_screen.show(); 
   editItem_screen.hide();
@@ -169,6 +171,7 @@ void drawAddItemPage(){
   aboutText.hide();
 } 
 void drawEditItemPage(){
+  notifications_list.hide();
   inventory.hide();
   addItem_screen.hide(); 
     editItem_screen.show();
@@ -177,6 +180,7 @@ void drawEditItemPage(){
     aboutText.hide();
 }
 void drawRemoveItemPage(){
+  notifications_list.hide();
   inventory.hide();
   addItem_screen.hide(); 
     editItem_screen.hide();
@@ -186,6 +190,7 @@ void drawRemoveItemPage(){
 }
 
 void drawNotificationsPage(){
+  notifications_list.show();
   inventory.hide();
   addItem_screen.hide(); 
     editItem_screen.hide();
@@ -195,6 +200,7 @@ void drawNotificationsPage(){
 }
 
 void drawReportsPage(){
+  notifications_list.hide();
   inventory.hide();
   addItem_screen.hide(); 
   editItem_screen.hide();
@@ -204,6 +210,7 @@ void drawReportsPage(){
 }
 
 void drawHelpPage(){
+  notifications_list.hide();
   inventory.hide();
   addItem_screen.hide(); 
   editItem_screen.hide();
@@ -213,6 +220,7 @@ void drawHelpPage(){
 }
 
 void drawAboutPage(){
+  notifications_list.hide();
   inventory.hide();
   helpText.hide();
   aboutText.show();

@@ -26,6 +26,7 @@ String currentLanguage = "fr";
 
 String font = "SansSerif";
 ArrayList<ItemComposite> items = new ArrayList<ItemComposite>();//Declaring the list of composite items
+ArrayList<NotificationComposite> notifications = new ArrayList<NotificationComposite>();//Declaring the list of composite items
 int pageNum = 1; //current page being displayed on the table. This can be used while the scrolling action
 int dataSet = 0;
 
@@ -35,10 +36,13 @@ ItemScreen editItem_screen;
 ItemScreen removeItem_screen;
 
 ScrollableList inventory;
+ScrollableList notifications_list;
 
 //Item size declaration
 int item_width;
 int item_height;
+int notif_width;
+int notif_height;
 
 /*----------------Common Utilites--------------------------*/
 
@@ -50,6 +54,8 @@ void setupBackground(){
   cp5.setControlFont(createFont(font,15 * scaleFactor));
   item_width = percentX(50);
   item_height = percentY(17);
+  notif_width = percentX(50);
+  notif_height = percentY(10);
 //  setupItemComposite();//Start with the initial page. After this, pagees will be set in controlEvent function
 
 //Initializing about and Help Screen
@@ -83,7 +89,7 @@ aboutText.hide();
 void setupItemComposite(){
   System.out.println("Inside setupItemComposite");
   
-  inventory = new ScrollableList(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "inventory", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(5), item_width + 20, 20);
+  inventory = new ScrollableList(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "Inventory", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(5), item_width + 20, 20);
   inventory.setGroupHeight(item_height);
     inventory.setGroupDisplay(5);
   
@@ -101,6 +107,20 @@ void setupItemComposite(){
       items.add(item);
       inventory.addGroup(item);
      }
+     
+     notifications_list = new ScrollableList(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "Notifications", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(5), item_width + 20, 20);
+  notifications_list.setGroupHeight(notif_height);
+    notifications_list.setGroupDisplay(8);
+    
+    for(int i = 0; i < 10; i++) {
+       NotificationComposite msg = new NotificationComposite(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "Msg" + i, 0, 0, notif_width, notif_height);
+      cp5.register(cp5, "msg" + i, msg);
+      msg.setBackgroundColor(color(168, 168, 192));
+      msg.setLabel("Msg" + i);
+      msg.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lectus risus, placerat eget lobortis nec, lacinia ac neque. Integer laoreet gravida lectus quis convallis. Aliquam ac placerat leo. Nam a arcu augue, sit amet feugiat augue. Phasellus vulputate quam eu tortor lobortis venenatis.");
+      notifications.add(msg);
+      notifications_list.addGroup(msg);
+    }
 }
 
 //percent screen width height utilites 
@@ -114,15 +134,16 @@ int percentY(int value){
 
 
 public void controlEvent(ControlEvent theEvent) {
-  println(theEvent.getController().getName());
+  //println(theEvent.getController().getName());
   
+  if(theEvent.isController())
   if(theEvent.getController().getParent() instanceof ControlGroup) {
     String parent = theEvent.getController().getParent().getName();
     if( theEvent.getController().getName().equals(parent + "-Cancel")) {
       theEvent.getController().getParent().hide();
 //      inventory.show();
     }
-    println("Parent: " + theEvent.getController().getParent().getName());
+    //println("Parent: " + theEvent.getController().getParent().getName());
   }
   
   switch(theEvent.getId()) {

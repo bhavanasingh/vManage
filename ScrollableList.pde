@@ -5,7 +5,7 @@ public class ScrollableList extends ControlGroup<ScrollableList> {
   protected Slider _myScrollbar;
   protected float _myScrollValue = 0;
   protected boolean isScrollbarVisible = true;
-  protected int _myScrollbarWidth = 6;
+  protected int _myScrollbarWidth = 20;
   
   protected int groupOffset = 0;
   protected int groupDisplay = 3;
@@ -40,6 +40,10 @@ public class ScrollableList extends ControlGroup<ScrollableList> {
     _myScrollbar.updateDisplayMode(DEFAULT);
     _myScrollbar.setWidth(20);
     _myScrollbar.setHeight(groupDisplay*_myGroupHeight);
+  _myScrollbar.setColorBackground(#E0E7F0);
+  _myScrollbar.setColorForeground(#181860);
+  _myScrollbar.setColorActive(#D1C4D9);
+  _myScrollbar.setHandleSize(50);
     add(_myScrollbar);
   }
 

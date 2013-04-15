@@ -12,7 +12,6 @@ public class ItemComposite extends ControlGroup {
   protected int buttonWidth = percentX(5);
   protected int buttonHeight = percentY(3);
   protected int spacing = 5;
-  protected int backgroundHeight = buttonHeight*4 + spacing*5;
   
   public ItemComposite(ControlP5 theControlP5, String theName) {
     this(theControlP5, theControlP5.getDefaultTab(), theName, 0, 0, 300, 60);
@@ -24,7 +23,7 @@ public class ItemComposite extends ControlGroup {
     
     this.setHeight(percentY(2));
     this.disableCollapse();
-    this.setBackgroundHeight(backgroundHeight);
+    this.setBackgroundHeight(theHeight);
     
    sell_button = cp5.addButton(theName + "-sell_button")
      .setPosition(getWidth() - buttonWidth - spacing, spacing)
