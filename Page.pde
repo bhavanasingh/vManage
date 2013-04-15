@@ -59,9 +59,18 @@ void setupItemScreen(){
   removeItem_screen.addTextfield("Cost Price");
   removeItem_screen.addButton("Submit");
   removeItem_screen.addButton("Cancel");    
+  
+  addRule_screen = new ItemScreen(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "Add Rule", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(5), percentX(40), percentY(50));
+  addRule_screen.addTextfield("Item Id");
+  addRule_screen.addTextfield("Name");
+  addRule_screen.addTextfield("Brand");
+  addRule_screen.addTextfield("Quantity / month");
+  addRule_screen.addButton("Delete");
+  
   addItem_screen.hide();
   editItem_screen.hide();
   removeItem_screen.hide();
+  addRule_screen.hide();
      
 }
 
