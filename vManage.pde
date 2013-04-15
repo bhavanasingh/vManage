@@ -28,7 +28,7 @@ void draw()
   //setupBackground(); //clear back ground and draw header
   background(255);
    
-  switch(currentPage) {
+    switch(currentPage) {
      
     case Page.HOME_PAGE:  
  
@@ -63,7 +63,15 @@ void draw()
     case Page.ABOUT_PAGE:  
       drawAboutPage();
       break; 
-          
+
+    case Page.RULE_LIST_PAGE:  
+      drawRulesPage();
+      break;
+
+    case Page.ADD_RULE_PAGE:  
+      drawAddRulePage();
+      break;
+      
     default:
       
       drawHomePage(); 
