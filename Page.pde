@@ -107,6 +107,7 @@ void drawMainMenu() {
      .setId(1)
      .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      ;
+     home_button.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
      
      notifications_button = cp5.addButton("notifications_button")
      .setPosition(sidebar_buttonX, sidebar_buttonY + sidebar_buttonHeight + sidebar_space)
@@ -115,6 +116,7 @@ void drawMainMenu() {
      .setId(2)
      .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      ;
+     notifications_button.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
      
      addItem_button  = cp5.addButton("addItem_button")
      .setPosition(sidebar_buttonX, sidebar_buttonY + sidebar_buttonHeight * 2 + sidebar_space * 2)
@@ -123,6 +125,7 @@ void drawMainMenu() {
      .setId(3)
      .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      ;
+     addItem_button.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
     
      report_button  = cp5.addButton("report_button")
      .setPosition(sidebar_buttonX, sidebar_buttonY + sidebar_buttonHeight * 3 + sidebar_space * 3)
@@ -131,6 +134,7 @@ void drawMainMenu() {
      .setId(4)
      .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      ;
+     report_button.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
      
      help_button  = cp5.addButton("help_button")
      .setPosition(sidebar_buttonX, sidebar_buttonY + sidebar_buttonHeight * 4 + sidebar_space * 4)
@@ -139,6 +143,7 @@ void drawMainMenu() {
      .setId(5)
      .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      ;
+     help_button.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
      
      about_button  = cp5.addButton("about_button")
      .setPosition(sidebar_buttonX, sidebar_buttonY + sidebar_buttonHeight * 5 + sidebar_space * 5)
@@ -147,6 +152,7 @@ void drawMainMenu() {
      .setId(6)
      .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      ;
+     about_button.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
      
      exit_button  = cp5.addButton("exit_button")
      .setPosition(sidebar_buttonX, sidebar_buttonY + sidebar_buttonHeight * 8 + sidebar_space * 8)
@@ -155,6 +161,7 @@ void drawMainMenu() {
      .setId(7)
      .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      ;
+     exit_button.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
 
       rules_button = cp5.addButton("rules_button")
      .setPosition(sidebar_buttonX, sidebar_buttonY + sidebar_buttonHeight * 6 + sidebar_space * 6)
@@ -163,6 +170,7 @@ void drawMainMenu() {
      .setId(8)
      .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      ;
+     rules_button.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
      
      add_rule_button = cp5.addButton("add_rule_button")
      .setPosition(sidebar_buttonX, sidebar_buttonY + sidebar_buttonHeight * 7 + sidebar_space * 7)
@@ -171,6 +179,7 @@ void drawMainMenu() {
      .setId(9)
      .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      ;
+     add_rule_button.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
 //Below buttons are commented because these buttons will be moved to a different page. They are not a part of main menu
     /*sell_button  = cp5.addButton("sell_button")
      .setPosition(sidebar_buttonX, sidebar_buttonY + sidebar_buttonHeight * 9 + sidebar_space * 9)

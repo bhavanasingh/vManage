@@ -34,7 +34,7 @@ public class ItemScreen extends ControlGroup {
      .setPosition(spacing,spacing + field_height*index*2)
      .setSize(field_width,field_height)
      .setGroup(this)
-     .setColorBackground(#A8A8C0);
+     .setColorBackground(#E9E9E9);
      ;
      
       Label label = field.captionLabel();
@@ -54,6 +54,7 @@ public class ItemScreen extends ControlGroup {
      .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      .setGroup(this)
      ;
+     button.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
      
      buttons.add(button);
     
