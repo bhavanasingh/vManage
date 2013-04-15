@@ -3,7 +3,7 @@ vManage - Inventory management system for Pharmacy
 
 Authors: Bhavana Singh and Jonathan Evanson
 
-Description: This code has been written as part of CS442 (Software Engineering II) source
+Description: This code has been written as part of CS442 (Software Engineering II) course
               taught by professor Ugo Buy at University of Illinois at Chicago.
 
 //--------------------------------------------------------------------------------------------*/
