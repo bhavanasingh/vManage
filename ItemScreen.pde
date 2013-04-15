@@ -51,7 +51,7 @@ public class ItemScreen extends ControlGroup {
      .setPosition(spacing*2 + field_width, spacing + spacing*index + buttonHeight*index)
      .setSize(buttonWidth,buttonHeight)
      .setLabel(name)
-     .setColorBackground(#181860).setColorLabel(#FFFFFF).setColorValue(#000000).setColorForeground(#D1C4D9).setColorActive(#E0E7F0)
+     .setColorBackground(#424242).setColorLabel(#ffffff).setColorValue(#000000).setColorForeground(#4DBCE9).setColorActive(#26ADE4)
      .setGroup(this)
      ;
      

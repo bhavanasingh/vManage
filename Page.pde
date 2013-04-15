@@ -33,7 +33,7 @@ void setupItemScreen(){
   sidebar_buttonHeight = percentY(8);
   sidebar_space = percentX(1);
 
-  addItem_screen = new ItemScreen(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "Add Item", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(5), percentX(40), percentY(50));
+  addItem_screen = new ItemScreen(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "Add Item", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(2), percentX(40), percentY(50));
   addItem_screen.addTextfield("Item Id");
   addItem_screen.addTextfield("Name");
   addItem_screen.addTextfield("Brand");
@@ -42,7 +42,7 @@ void setupItemScreen(){
   addItem_screen.addButton("Submit");
   addItem_screen.addButton("Cancel");
   
-  receiveItem_screen = new ItemScreen(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "receiveItem_screen", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(5), percentX(40), percentY(50));
+  receiveItem_screen = new ItemScreen(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "receiveItem_screen", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(2), percentX(40), percentY(50));
   receiveItem_screen.addTextfield("Item Id");
   receiveItem_screen.addTextfield("Name");
   receiveItem_screen.addTextfield("Brand");
@@ -51,7 +51,7 @@ void setupItemScreen(){
   receiveItem_screen.addButton("Submit");
   receiveItem_screen.addButton("Cancel");
   
-  sellItem_screen = new ItemScreen(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "sellItem_screen", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(5), percentX(40), percentY(50));
+  sellItem_screen = new ItemScreen(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "sellItem_screen", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(2), percentX(40), percentY(50));
   sellItem_screen.addTextfield("Item Id");
   sellItem_screen.addTextfield("Name");
   sellItem_screen.addTextfield("Brand");
@@ -60,7 +60,7 @@ void setupItemScreen(){
   sellItem_screen.addButton("Submit");
   sellItem_screen.addButton("Cancel");
   
-  editItem_screen = new ItemScreen(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "editItem_screen", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(5), percentX(40), percentY(50));
+  editItem_screen = new ItemScreen(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "editItem_screen", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(2), percentX(40), percentY(50));
   editItem_screen.addTextfield("Item Id");
   editItem_screen.addTextfield("Name");
   editItem_screen.addTextfield("Brand");

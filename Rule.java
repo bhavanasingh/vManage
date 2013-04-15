@@ -1,4 +1,3 @@
-package inventory;
 import java.util.*;
 import java.sql.*;
 
@@ -9,7 +8,7 @@ import java.sql.*;
 
 
 public class Rule{
-  public void Rule(int id,int amount)
+  public Rule(int id,int amount)
 	{
 		Connection con1;
 		
