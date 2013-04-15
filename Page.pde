@@ -65,8 +65,9 @@ void setupItemScreen(){
   addRule_screen.addTextfield("Name");
   addRule_screen.addTextfield("Brand");
   addRule_screen.addTextfield("Quantity / month");
-  addRule_screen.addButton("Delete");
-  
+  addRule_screen.addButton("Submit");
+  addRule_screen.addButton("Cancel");
+
   addItem_screen.hide();
   editItem_screen.hide();
   removeItem_screen.hide();
