@@ -26,6 +26,7 @@ String currentLanguage = "fr";
 
 String font = "SansSerif";
 ArrayList<ItemComposite> items = new ArrayList<ItemComposite>();//Declaring the list of composite items
+ArrayList<RuleComposite> rItems = new ArrayList<RuleComposite>();//Declaring the list of rule composite items
 ArrayList<NotificationComposite> notifications = new ArrayList<NotificationComposite>();//Declaring the list of composite items
 int pageNum = 1; //current page being displayed on the table. This can be used while the scrolling action
 int dataSet = 0;
@@ -34,9 +35,11 @@ int dataSet = 0;
 ItemScreen addItem_screen;
 ItemScreen editItem_screen;
 ItemScreen removeItem_screen;
+ItemScreen addRule_screen;
 
 ScrollableList inventory;
 ScrollableList notifications_list;
+ScrollableList rule_list;
 
 //Item size declaration
 int item_width;
@@ -107,6 +110,26 @@ void setupItemComposite(){
       inventory.addGroup(item);
      }
      
+    rule_list = new ScrollableList(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "rule_list", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(5), item_width + 20, 20);
+  inventory.setGroupHeight(item_height);
+    inventory.setGroupDisplay(5);
+    
+    for(int i = 0; i < 12; i++) {
+       RuleComposite item = new RuleComposite(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "Rule" + i, 0, 0, item_width, item_height);
+      cp5.register(cp5, "item" + i, item);
+      item.setBackgroundColor(color(168, 168, 192));
+      item.setLabel("Rule" + i);
+   // item.setGroup(group);
+      item.setItemName("Example Name");
+      item.setItemBrand("Example Brand");
+      item.setItemQty("1234");
+      item.setItemDescription("Sample description of an Item");
+      
+      rItems.add(item);
+      rule_list.addGroup(item);
+     }
+     
+
      notifications_list = new ScrollableList(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "Notifications", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(5), item_width + 20, 20);
   notifications_list.setGroupHeight(notif_height);
     notifications_list.setGroupDisplay(8);
@@ -146,7 +169,7 @@ public void controlEvent(ControlEvent theEvent) {
   
   switch(theEvent.getId()) {
     case(1)://Home page with list of items
-    currentPage = Page.HOME_PAGE;  
+    currentPage = Page.HOME_PAGE;
     break;
     case(2)://Notifications list
     currentPage = Page.NOTIFICATIONS_PAGE;
@@ -163,6 +186,12 @@ public void controlEvent(ControlEvent theEvent) {
     break;
     case(6)://About Screen
     currentPage = Page.ABOUT_PAGE;
+    break;
+    case(8)://Rule list screen
+    currentPage = Page.RULE_LIST_PAGE;
+    break;
+    case(9)://Add rule Screen
+    currentPage = Page.ADD_RULE_PAGE;
     break;
     case(7)://Exit
     exit();
@@ -181,6 +210,8 @@ static class Page{
   final static int NOTIFICATIONS_PAGE = 5;
   final static int REPORT_PAGE = 6;
   final static int HELP_PAGE = 7;
-  final static int ABOUT_PAGE = 8;  
+  final static int ABOUT_PAGE = 8;
+  final static int RULE_LIST_PAGE = 9;
+  final static int ADD_RULE_PAGE = 10;
 
 }
