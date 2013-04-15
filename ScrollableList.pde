@@ -20,6 +20,7 @@ public class ScrollableList extends ControlGroup<ScrollableList> {
 
     this.disableCollapse();
     this.captionLabel().toUpperCase(false);
+    this.hideBar();
     
     groups = new ArrayList<ControlGroup>();
 

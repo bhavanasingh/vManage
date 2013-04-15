@@ -34,7 +34,14 @@ void draw()
  
       drawHomePage(); 
       break; 
-      
+     case Page.RECEIVE_ITEM_PAGE:
+ 
+      drawReceiveItemPage(); 
+      break;
+     case Page.SELL_ITEM_PAGE:
+ 
+      drawSellItemPage(); 
+      break;
     case Page.ADD_ITEM_PAGE:
  
       drawAddItemPage(); 

@@ -33,6 +33,8 @@ int dataSet = 0;
 
 //Screen declarations
 ItemScreen addItem_screen;
+ItemScreen receiveItem_screen;
+ItemScreen sellItem_screen;
 ItemScreen editItem_screen;
 ItemScreen removeItem_screen;
 ItemScreen addRule_screen;
@@ -92,7 +94,7 @@ aboutText.hide();
 void setupItemComposite(){
   System.out.println("Inside setupItemComposite");
   
-  inventory = new ScrollableList(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "Inventory", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(5), item_width + 20, 20);
+  inventory = new ScrollableList(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "Inventory", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(2), item_width + 20, 20);
   inventory.setGroupHeight(item_height);
     inventory.setGroupDisplay(5);
   
@@ -110,7 +112,7 @@ void setupItemComposite(){
       inventory.addGroup(item);
      }
      
-    rule_list = new ScrollableList(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "rule_list", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(5), item_width + 20, 20);
+    rule_list = new ScrollableList(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "rule_list", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(2), item_width + 20, 20);
   inventory.setGroupHeight(item_height);
     inventory.setGroupDisplay(5);
     
@@ -157,15 +159,31 @@ int percentY(int value){
 public void controlEvent(ControlEvent theEvent) {
   //println(theEvent.getController().getName());
   
-  if(theEvent.isController())
-  if(theEvent.getController().getParent() instanceof ControlGroup) {
-    String parent = theEvent.getController().getParent().getName();
-    if( theEvent.getController().getName().equals(parent + "-Cancel")) {
-      theEvent.getController().getParent().hide();
-//      inventory.show();
+    if(theEvent.isController()) {
+      if(theEvent.getController().getParent() instanceof ControlGroup) {
+        String parent = theEvent.getController().getParent().getName();
+        String controller = theEvent.getController().getName();
+        println("Controller: " + controller);
+        println("Parent: " + parent);
+        
+        if(controller.equals(parent + "-receive_button")) {
+           currentPage = Page.RECEIVE_ITEM_PAGE;
+          drawReceiveItemPage();
+        } else if(controller.equals(parent + "-sell_button")) {
+           currentPage = Page.SELL_ITEM_PAGE;
+          drawSellItemPage();
+        } else if(controller.equals(parent + "-edit_button")) {
+           currentPage = Page.EDIT_ITEM_PAGE;
+          drawEditItemPage();
+        }
+        
+        if(controller.equals(parent + "-Cancel")) {
+          currentPage = Page.HOME_PAGE;
+          drawHomePage();
+        }
+      }
     }
-    //println("Parent: " + theEvent.getController().getParent().getName());
-  }
+    
   
   switch(theEvent.getId()) {
     case(1)://Home page with list of items
@@ -205,13 +223,15 @@ static class Page{
 
   final static int HOME_PAGE = 1;
   final static int ADD_ITEM_PAGE = 2;
-  final static int EDIT_ITEM_PAGE = 3;
-  final static int REMOVE_ITEM_PAGE = 4;
-  final static int NOTIFICATIONS_PAGE = 5;
-  final static int REPORT_PAGE = 6;
-  final static int HELP_PAGE = 7;
-  final static int ABOUT_PAGE = 8;
-  final static int RULE_LIST_PAGE = 9;
-  final static int ADD_RULE_PAGE = 10;
+  final static int RECEIVE_ITEM_PAGE = 3;
+  final static int SELL_ITEM_PAGE = 4;
+  final static int EDIT_ITEM_PAGE = 5;
+  final static int REMOVE_ITEM_PAGE = 6;
+  final static int NOTIFICATIONS_PAGE = 7;
+  final static int REPORT_PAGE = 8;
+  final static int HELP_PAGE = 9;
+  final static int ABOUT_PAGE = 10;
+  final static int RULE_LIST_PAGE = 11;
+  final static int ADD_RULE_PAGE = 12;
 
 }

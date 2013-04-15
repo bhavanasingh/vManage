@@ -28,7 +28,7 @@ void setupItemScreen(){
   buttonHeight = percentY(6);
 
   sidebar_buttonX = percentX(2);
-  sidebar_buttonY = percentY(20);
+  sidebar_buttonY = percentY(2);
   sidebar_buttonWidth = percentX(8);
   sidebar_buttonHeight = percentY(8);
   sidebar_space = percentX(1);
@@ -41,8 +41,26 @@ void setupItemScreen(){
   addItem_screen.addTextfield("Cost Price");
   addItem_screen.addButton("Submit");
   addItem_screen.addButton("Cancel");
-     
-  editItem_screen = new ItemScreen(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "editItem_screen", sidebar_buttonX + sidebar_buttonWidth + 10, 15, 300, 10);
+  
+  receiveItem_screen = new ItemScreen(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "receiveItem_screen", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(5), percentX(40), percentY(50));
+  receiveItem_screen.addTextfield("Item Id");
+  receiveItem_screen.addTextfield("Name");
+  receiveItem_screen.addTextfield("Brand");
+  receiveItem_screen.addTextfield("Description");
+  receiveItem_screen.addTextfield("Cost Price");
+  receiveItem_screen.addButton("Submit");
+  receiveItem_screen.addButton("Cancel");
+  
+  sellItem_screen = new ItemScreen(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "sellItem_screen", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(5), percentX(40), percentY(50));
+  sellItem_screen.addTextfield("Item Id");
+  sellItem_screen.addTextfield("Name");
+  sellItem_screen.addTextfield("Brand");
+  sellItem_screen.addTextfield("Description");
+  sellItem_screen.addTextfield("Cost Price");
+  sellItem_screen.addButton("Submit");
+  sellItem_screen.addButton("Cancel");
+  
+  editItem_screen = new ItemScreen(cp5, (ControllerGroup<?>) cp5.controlWindow.getTabs().get(1), "editItem_screen", sidebar_buttonX + sidebar_buttonWidth + percentX(2), percentY(5), percentX(40), percentY(50));
   editItem_screen.addTextfield("Item Id");
   editItem_screen.addTextfield("Name");
   editItem_screen.addTextfield("Brand");
@@ -181,9 +199,12 @@ void drawMainMenu() {
 }
 
 //Below functions define what components will be drawn based on the page selection in the control events. They are called from vManage.pde
+
 void drawRulesPage(){
   notifications_list.hide();
   inventory.hide();
+  receiveItem_screen.hide();
+  sellItem_screen.hide();
   addItem_screen.hide();
   editItem_screen.hide();
   removeItem_screen.hide();
@@ -196,6 +217,8 @@ void drawRulesPage(){
 void drawAddRulePage(){
   notifications_list.hide();
   inventory.hide();
+  receiveItem_screen.hide();
+  sellItem_screen.hide();
   addItem_screen.hide();
   editItem_screen.hide();
   removeItem_screen.hide();
@@ -208,6 +231,34 @@ void drawAddRulePage(){
 void drawHomePage(){
   notifications_list.hide();
   inventory.show();
+  receiveItem_screen.hide();
+  sellItem_screen.hide();
+  addItem_screen.hide();
+  editItem_screen.hide();
+  removeItem_screen.hide();
+  helpText.hide();
+  aboutText.hide();
+  addRule_screen.hide();
+  rule_list.hide();
+}
+void drawReceiveItemPage() {
+  notifications_list.hide();
+  inventory.hide();
+  receiveItem_screen.show();
+  sellItem_screen.hide();
+  addItem_screen.hide();
+  editItem_screen.hide();
+  removeItem_screen.hide();
+  helpText.hide();
+  aboutText.hide();
+  addRule_screen.hide();
+  rule_list.hide();
+}
+void drawSellItemPage() {
+  notifications_list.hide();
+  inventory.hide();
+  receiveItem_screen.hide();
+  sellItem_screen.show();
   addItem_screen.hide();
   editItem_screen.hide();
   removeItem_screen.hide();
@@ -219,6 +270,8 @@ void drawHomePage(){
 void drawAddItemPage(){
   notifications_list.hide();
   inventory.hide();
+  receiveItem_screen.hide();
+  sellItem_screen.hide();
   addItem_screen.show();
   editItem_screen.hide();
   removeItem_screen.hide();
@@ -230,6 +283,8 @@ void drawAddItemPage(){
 void drawEditItemPage(){
   notifications_list.hide();
   inventory.hide();
+  receiveItem_screen.hide();
+  sellItem_screen.hide();
   addItem_screen.hide();
   editItem_screen.show();
   removeItem_screen.hide();
@@ -241,6 +296,8 @@ void drawEditItemPage(){
 void drawRemoveItemPage(){
   notifications_list.hide();
   inventory.hide();
+  receiveItem_screen.hide();
+  sellItem_screen.hide();
   addItem_screen.hide();
   editItem_screen.hide();
   removeItem_screen.show();
@@ -253,6 +310,8 @@ void drawRemoveItemPage(){
 void drawNotificationsPage(){
   notifications_list.show();
   inventory.hide();
+  receiveItem_screen.hide();
+  sellItem_screen.hide();
   addItem_screen.hide();
   editItem_screen.hide();
   removeItem_screen.hide();
@@ -265,6 +324,8 @@ void drawNotificationsPage(){
 void drawReportsPage(){
   notifications_list.hide();
   inventory.hide();
+  receiveItem_screen.hide();
+  sellItem_screen.hide();
   addItem_screen.hide();
   editItem_screen.hide();
   removeItem_screen.hide();
@@ -277,6 +338,8 @@ void drawReportsPage(){
 void drawHelpPage(){
   notifications_list.hide();
   inventory.hide();
+  receiveItem_screen.hide();
+  sellItem_screen.hide();
   addItem_screen.hide();
   editItem_screen.hide();
   removeItem_screen.hide();
@@ -289,6 +352,8 @@ void drawHelpPage(){
 void drawAboutPage(){
   notifications_list.hide();
   inventory.hide();
+  receiveItem_screen.hide();
+  sellItem_screen.hide();
   helpText.hide();
   aboutText.show();
   addRule_screen.hide();
