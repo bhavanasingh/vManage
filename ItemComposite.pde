@@ -68,19 +68,19 @@ public class ItemComposite extends ControlGroup {
       ;
     
      item_brand_label = cp5.addTextlabel(theName + "-item_brand_label")
-      .setPosition(spacing,spacing*2 + item_name_label.getLineHeight())
+      .setPosition(spacing,spacing*2 + percentY(1))
       .setColorValue(0xff000000)
       .setGroup(this)
       ;
       
       item_qty_label  = cp5.addTextlabel(theName + "-item_qty_label")
-      .setPosition(spacing,spacing*3 + item_name_label.getLineHeight()*2)
+      .setPosition(spacing,spacing*3 + percentY(1)*2)
       .setColorValue(0xff000000)
       .setGroup(this)
       ;
   
   item_description_label = cp5.addTextlabel(theName + "-item_description_label")
-      .setPosition(spacing,spacing*4 + item_name_label.getLineHeight()*3)
+      .setPosition(spacing,spacing*4 + percentY(1)*3)
       .setColorValue(0xff000000)
       .setGroup(this)
       ;    
