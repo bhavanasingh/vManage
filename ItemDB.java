@@ -1,68 +1,127 @@
-//Abhiram Kadiyala
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-
-public class ItemDB extends DatabaseController {
-public ArrayList<String> list = new ArrayList<String>();
-  
-	public ArrayList<String> readDatabase() throws SQLException{
-		
-		preparedStatement = connection.prepareStatement("select * from item");
-		
-		resultSet = preparedStatement.executeQuery();
-		return printResult(resultSet);
+public class Item {
+  private int mid; //medicine ID
+	private String name;
+	private String brand;
+	private Float cost;
+	private String description;
+	
+	private String expireDate;
+	private String status;
+	private String stockstatus;
+	
+	private int quantity;
+	private int averageConsumption;
+	
+	public Item() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-	private ArrayList<String> printResult(ResultSet rs) throws SQLException{
-
-		System.out.println();
-		while (rs.next()) {
-
-		      String name = resultSet.getString("user_name");
-		      String email = resultSet.getString("user_email");
-		      String password = resultSet.getString("password");
-
-		      System.out.printf("%10s %10s %10s ", name, email, password);
-		      System.out.println();
-		      list.add(name);
-		      list.add(email);
-		      list.add(password);
-		}
-		System.out.println();
-		return list;
+	
+	public Item(int mid, String name, String brand, Float cost,
+			String description, String expireDate, String status,
+			String stockstatus, int quantity, int averageConsumption) {
+		super();
+		this.mid = mid;
+		this.name = name;
+		this.brand = brand;
+		this.cost = cost;
+		this.description = description;
+		this.expireDate = expireDate;
+		this.status = status;
+		this.stockstatus = stockstatus;
+		this.quantity = quantity;
+		this.averageConsumption = averageConsumption;
 	}
-	public void insertItem(Medicine m){
-		
-		Statement stmt = null;
-
-		String sql1 = "insert into users values('" +m.getMid() +"','"
-					+m.getName() +"','" +m.getBrand() +"','" +m.getCost()+"','" +m.getDescription()+"','" +m.getExpireDate()
-					+"','" +m.getStatus()+"','" +m.getStockstatus()+"','" +m.getQuantity()+"','" +m.getAverageConsumption()+"')";
-		
-		try {
-		stmt = connection.createStatement();
-			stmt.execute(sql1);
-			stmt.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+	
+	@Override
+	public String toString() {
+		return "Medicine [mid=" + mid + ", name=" + name + ", brand=" + brand
+				+ ", cost=" + cost + ", description=" + description
+				+ ", expireDate=" + expireDate + ", status=" + status
+				+ ", stockstatus=" + stockstatus + ", quantity=" + quantity
+				+ ", averageConsumption=" + averageConsumption + "]";
 	}
-	public void removeItem(int id) {
-		// TODO Auto-generated method stub
-		Statement stmt = null;
-
-		String sql1 = "delete from item where Item-ID= '"+id +"'";
-		
-		try {
-		stmt = connection.createStatement();
-			stmt.execute(sql1);
-			stmt.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		System.out.println("Medicine(s) with ID "+id +" is(are) removed!");
+	
+	
+	public int getMid() {
+		return mid;
 	}
+	
+	public void setMid(int mid) {
+		this.mid = mid;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getBrand() {
+		return brand;
+	}
+	
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+	
+	public Float getCost() {
+		return cost;
+	}
+	
+	public void setCost(Float cost) {
+		this.cost = cost;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	public String getExpireDate() {
+		return expireDate;
+	}
+	
+	public void setExpireDate(String expireDate) {
+		this.expireDate = expireDate;
+	}
+	
+	public String getStatus() {
+		return status;
+	}
+	
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	
+	public String getStockstatus() {
+		return stockstatus;
+	}
+	
+	public void setStockstatus(String stockstatus) {
+		this.stockstatus = stockstatus;
+	}
+	
+	public int getQuantity() {
+		return quantity;
+	}
+	
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	
+	public int getAverageConsumption() {
+		return averageConsumption;
+	}
+	
+	public void setAverageConsumption(int averageConsumption) {
+		this.averageConsumption = averageConsumption;
+	}
+	
 
 }
